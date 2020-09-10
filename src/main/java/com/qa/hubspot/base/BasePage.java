@@ -17,7 +17,8 @@ public class BasePage {
 	WebDriver driver;
 	Properties p;
 	
-	public WebDriver init_driver(String browserName) {
+	public WebDriver init_driver(Properties prop) {
+		String browserName=prop.getProperty("browser");
 		if(browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();

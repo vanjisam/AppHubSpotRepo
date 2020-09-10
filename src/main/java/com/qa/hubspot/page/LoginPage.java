@@ -19,11 +19,11 @@ public class LoginPage extends BasePage {
 	}
 			
 	
-	public void login(String s1, String s2) {
+	public HomePage login(String s1, String s2) {
 		driver.findElement(username).sendKeys(s1);
 		driver.findElement(password).sendKeys(s2);
 		driver.findElement(loginButton).click();
-		
+		return new HomePage(driver);
 	}
 	
 	public String getPageTitle() {
