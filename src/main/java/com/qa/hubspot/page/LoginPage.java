@@ -39,5 +39,8 @@ public class LoginPage extends BasePage {
 		return util.doIsDispalyed(signUp);
 		}
 	
+	public void getTitle(){
+		System.out.println("test from git")
+	}
 	
 }
