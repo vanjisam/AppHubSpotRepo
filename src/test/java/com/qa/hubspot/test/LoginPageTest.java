@@ -1,37 +1,18 @@
 package com.qa.hubspot.test;
 
-import java.util.Properties;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.qa.hubspot.base.BasePage;
-import com.qa.hubspot.page.LoginPage;
+import com.qa.hubspot.base.BasePageTest;
 import com.qa.hubspot.util.constants;
 
-public class LoginPageTest {
-	WebDriver driver;
-	BasePage basePage;
-	LoginPage loginPage;
-	Properties prop;
-
-	
-	@BeforeTest
-	public void setup() {
-		basePage=new BasePage();
-		prop=basePage.int_prop();
-		driver= basePage.init_driver(prop);
-		loginPage=new LoginPage(driver);
-			}
+public class LoginPageTest extends BasePageTest{
+		
 	
 	@Test(priority=1)
-	public void verifyLoginPageTest() throws InterruptedException {
-		Thread.sleep(5000);
+	public void verifyLoginPageTest() {
 		String pageTitle=loginPage.getPageTitle();
-		Assert.assertEquals(pageTitle, constants.PAGE_TITLE);
+		Assert.assertEquals(pageTitle, constants.LOGIN_PAGE_TITLE);
 	}
 	
 	
@@ -46,9 +27,5 @@ public class LoginPageTest {
 		loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
-	@AfterTest
-	public void tearDown() {
-		driver.quit();
-	}
 
 }

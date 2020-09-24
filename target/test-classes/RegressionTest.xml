@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Sanity Test Suite" thread-count="2" parallel="tests" verbose="3" >
+<suite name="Sanity Test Suite" verbose="3" >
   
   <test name="LoginTest" >
   <classes>
@@ -14,6 +14,13 @@
   
     <classes>
             <class name="com.qa.hubspot.test.HomePageTest"/>
+    </classes>     
+  </test> 
+  
+    <test name="Contacts Page Test" >
+  
+    <classes>
+            <class name="com.qa.hubspot.test.ContactPageTest"/>
     </classes>     
   </test> 
 </suite>
