@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Sanity Test Suite]" guice-stage="DEVELOPMENT" verbose="3">
-  <test thread-count="2" parallel="tests" name="HomePageTest(failed)" verbose="3">
+<suite name="Failed suite [Sanity Test Suite]" guice-stage="DEVELOPMENT" verbose="3">
+  <listeners>
+    <listener class-name="com.qa.hubspot.listeners.TestAllureListener"/>
+  </listeners>
+  <test thread-count="5" name="LoginTest(failed)" verbose="3">
     <classes>
-      <class name="com.qa.hubspot.test.HomePageTest">
+      <class name="com.qa.hubspot.test.LoginPageTest">
         <methods>
-          <include name="getWelcomeTest"/>
+          <include name="verifyLoginPageTest"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.qa.hubspot.test.HomePageTest -->
+      </class> <!-- com.qa.hubspot.test.LoginPageTest -->
     </classes>
-  </test> <!-- HomePageTest(failed) -->
+  </test> <!-- LoginTest(failed) -->
 </suite> <!-- Failed suite [Sanity Test Suite] -->
